@@ -1,0 +1,736 @@
+﻿/* DEFAULTS
+----------------------------------------------------------*/
+:root {
+    --bg: #fff;
+    --panel: #111827;
+    --text: #000;
+    --muted: #9ca3af;
+    --primary: #0d9dbc;
+    --danger: #ff0000;
+    --radius: 12px;
+    --space: 16px;
+}
+
+body {
+    background: #fff;
+    font-size: .80em;
+    font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    color: #696969;
+}
+
+a:link, a:visited {
+    color: #034af3;
+}
+
+a:hover {
+    color: #1d60ff;
+    text-decoration: none;
+}
+
+a:active {
+    color: #034af3;
+}
+
+p {
+    margin-bottom: 10px;
+    line-height: 1.6em;
+}
+
+
+/* HEADINGS   
+----------------------------------------------------------*/
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 1.5em;
+    color: #666666;
+    font-variant: small-caps;
+    text-transform: none;
+    font-weight: 200;
+    margin-bottom: 0px;
+}
+
+h1 {
+    font-size: 1.6em;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+h2 {
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+h4 {
+    font-size: 1.1em;
+}
+
+h5, h6 {
+    font-size: 1em;
+}
+
+/* this rule styles <h1> and <h2> tags that are the 
+first child of the left and right table columns */
+.rightColumn > h1, .rightColumn > h2, .leftColumn > h1, .leftColumn > h2 {
+    margin-top: 0px;
+}
+
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+.page {
+    width: 960px;
+    background-color: #fff;
+    margin: 20px auto 0px auto;
+    border: 1px solid #496077;
+}
+
+.header {
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    background: #4b6c9e;
+    width: 100%;
+}
+
+    .header h1 {
+        font-weight: 700;
+        margin: 0px;
+        padding: 0px 0px 0px 20px;
+        color: #f9f9f9;
+        border: none;
+        line-height: 2em;
+        font-size: 2em;
+    }
+
+.main {
+    padding: 0px 12px;
+    margin: 12px 8px 8px 8px;
+    min-height: 420px;
+}
+
+.leftCol {
+    padding: 6px 0px;
+    margin: 12px 8px 8px 8px;
+    width: 200px;
+    min-height: 200px;
+}
+
+.footer {
+    color: #4e5766;
+    padding: 8px 0px 0px 0px;
+    margin: 0px auto;
+    text-align: center;
+    line-height: normal;
+}
+
+
+/* TAB MENU   
+----------------------------------------------------------*/
+
+div.hideSkiplink {
+    background-color: #3a4f63;
+    width: 100%;
+}
+
+div.menu {
+    padding: 4px 0px 4px 8px;
+}
+
+    div.menu ul {
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+        width: auto;
+    }
+
+        div.menu ul li a, div.menu ul li a:visited {
+            background-color: #465c71;
+            border: 1px #4e667d solid;
+            color: #dde4ec;
+            display: block;
+            line-height: 1.35em;
+            padding: 4px 20px;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+            div.menu ul li a:hover {
+                background-color: #bfcbd6;
+                color: #465c71;
+                text-decoration: none;
+            }
+
+            div.menu ul li a:active {
+                background-color: #465c71;
+                color: #cfdbe6;
+                text-decoration: none;
+            }
+
+/* FORM ELEMENTS   
+----------------------------------------------------------*/
+
+fieldset {
+    margin: 1em 0px;
+    padding: 1em;
+    border: 1px solid #ccc;
+}
+
+    fieldset p {
+        margin: 2px 12px 10px 10px;
+    }
+
+    fieldset.login label, fieldset.register label, fieldset.changePassword label {
+        display: block;
+    }
+
+    fieldset label.inline {
+        display: inline;
+    }
+
+legend {
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 2px 4px 8px 4px;
+}
+
+input.textEntry {
+    width: 320px;
+    border: 1px solid #ccc;
+}
+
+input.passwordEntry {
+    width: 320px;
+    border: 1px solid #ccc;
+}
+
+div.accountInfo {
+    width: 42%;
+}
+
+/* MISC  
+----------------------------------------------------------*/
+
+.clear {
+    clear: both;
+}
+
+.title {
+    display: block;
+    float: left;
+    text-align: left;
+    width: auto;
+}
+
+.loginDisplay {
+    font-size: 1.1em;
+    display: block;
+    text-align: right;
+    padding: 10px;
+    color: White;
+}
+
+    .loginDisplay a:link {
+        color: white;
+    }
+
+    .loginDisplay a:visited {
+        color: white;
+    }
+
+    .loginDisplay a:hover {
+        color: white;
+    }
+
+.failureNotification {
+    font-size: 1.2em;
+    color: var(--danger);
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.submitButton {
+    text-align: right;
+    padding-right: 10px;
+}
+/**/
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 10;
+    top: 10;
+    left: 0;
+    background-color: #0d9dbc;
+    overflow-x: hidden;
+    transition: 0.5s;
+    border-radius: 0px 10px 0px 0px;
+    padding-top: 60px;
+}
+
+    .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: White;
+        display: block;
+        transition: 0.3s;
+    }
+
+        .sidenav a:hover {
+            color: #0d9dbc;
+        }
+
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+
+.buttondis {
+    border: none;
+    width: 300px;
+    height: 50px;
+    background-color: #0d9dbc;
+    color: #0d9dbc;
+    text-align: center;
+}
+
+.button {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border: none;
+    width: 300px;
+    height: 50px;
+    background-color: #0d9dbc;
+    color: white;
+    text-align: center;
+}
+
+/* #header {
+    width: 1731px;
+    margin-left: 0px;
+} */
+
+/* .Panell {
+    margin-left: 0px;
+    text-align: center;
+    background-color: #0d9dbc;
+    color: White;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 118px;
+    border-radius: 13px;
+    padding: 15px 50px 0px 20px;
+    font-size: large;
+} */
+
+.addbtn {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 6px;
+    border-style: none;
+    background-color: #0d9dbc;
+    color: White;
+    height: 35px;
+}
+
+.popblbtn {
+    border: none;
+    background-color: White;
+    color: White;
+    height: 1px;
+    width: 1px;
+}
+
+.popbtn {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 6px;
+    border-style: none;
+    background-color: #0d9dbc;
+    color: White;
+    height: 35px;
+    width: 50px;
+}
+
+.popbtn2 {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 6px;
+    border-style: none;
+    background-color: #0d9dbc;
+    color: White;
+    height: 35px;
+    width: 100px;
+}
+
+.popbtn {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 6px;
+    border-style: none;
+    background-color: #0d9dbc;
+    color: White;
+    height: 35px;
+    width: 100px;
+}
+
+.modalBackground {
+    background-color: Black;
+    filter: alpha(opacity=90) !important;
+    opacity: 0.6 !important;
+    z-index: 30;
+}
+
+.box {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 6px;
+    border-style: none;
+    height: 25px;
+    width: 200px;
+}
+
+.boxsresn {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 6px;
+    border-style: none;
+    height: 25px;
+    width: 100px;
+}
+
+.ddl {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 6px;
+    border-style: none;
+    height: 25px;
+    width: 80px;
+}
+
+.btn1 {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 6px;
+    border-style: none;
+    background-color: #0d9dbc;
+    color: White;
+    height: 40px;
+    Width: 150px;
+}
+
+.PanelB {
+    border-color: Black;
+    border-radius: 15px 15px 0px 0px;
+    background-color: #F2F2F2;
+    width: 200px;
+    height: 150px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.blinkblink {
+    text-decoration: blink;
+}
+
+.modalpopup {
+    border-radius: 15px 15px 15px 15px;
+    position: relative;
+    width: 450px;
+    height: 150px;
+    top: 50px;
+    left: 500px;
+    text-align: center;
+    background-color: White;
+    border: 1px solid black;
+    vertical-align: middle;
+}
+
+.rigg {
+    text-align: left;
+}
+
+.style1 {
+    width: 42px;
+    height: 17px;
+}
+
+.style2 {
+    height: 17px;
+    width: 876px;
+}
+
+.style3 {
+    width: 639px;
+}
+
+.WrapText {
+    width: 100%;
+    word-break: break-all;
+}
+
+.hidden {
+    display: none;
+}
+
+.notification-badge {
+    position: absolute;
+    top: 15%;
+    right: 20px;
+    background: var(--danger);
+    color: white;
+    padding: 0px 8px;
+    border-radius: 50%;
+}
+
+.badge {
+    background: var(--danger);
+    color: white;
+    padding: 0px 8px;
+    border-radius: 50%;
+}
+
+.notification {
+    position: fixed;
+    top: 30%;
+    right: 20px; /* Adjust this value to control the distance from the right side */
+    transform: translateY(-50%);
+    z-index: 1000;
+    position: fixed;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    display: none;
+}
+
+.movingLabel {
+    position: absolute;
+    left: -100%; /* Initial position outside the container */
+    white-space: nowrap; /* Prevent labels from wrapping */
+    animation: moveLabel 10s linear infinite; /* Animation properties */
+}
+
+/* .moving-label {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    white-space: nowrap;
+    transition: left 5s linear;
+} */
+
+.active {
+    background-color: #004c70 !important; /* Darker highlight */
+    color: white !important;
+    font-weight: bold;
+}
+
+.user_card {
+    height: 400px;
+    width: 350px;
+    margin-top: 70px;
+    margin-bottom: auto;
+    background: white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+}
+
+.brand_logo_container {
+    position: absolute;
+    height: 170px;
+    width: 170px;
+    top: -75px;
+    border-radius: 50%;
+    background: #0d9dbc;
+    padding: 10px;
+    text-align: center;
+}
+
+.brand_logo {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.form_container {
+    margin-top: 100px;
+}
+
+.login_btn {
+    width: 100%;
+    background: #0d9dbc !important;
+    color: white !important;
+}
+
+    .login_btn:focus {
+        box-shadow: none !important;
+        outline: 0px !important;
+    }
+
+.login_container {
+    padding: 0 2rem;
+}
+
+.input-group-text {
+    background: #0d9dbc !important;
+    color: white !important;
+    border: 0 !important;
+    border-radius: 0.25rem 0 0 0.25rem !important;
+}
+
+.input_user,
+.input_pass:focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+}
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: #0d9dbc !important;
+}
+
+.page-wrapper {
+    padding: 10px 10px 0;
+}
+
+.page-header {
+    width: 100%;
+}
+
+    .page-header .header-line {
+        background: var(--primary);
+        height: 10px;
+        margin: 0px;
+    }
+
+        .page-header .header-line.bottom {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            margin: 0;
+        }
+
+    .page-header .logo-wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: calc(100% - 20px);
+        padding: 10px;
+    }
+
+        .page-header .logo-wrapper > img {
+            height: 50px;
+            width: 100px;
+        }
+
+        .page-header .logo-wrapper .blue-band {
+            min-height: 20px;
+            width: calc(100% - 160px);
+            text-align: center;
+            background: var(--primary);
+            color: white;
+            border-radius: 10px;
+            padding: 15px 20px;
+            font-size: large;
+            line-height: 20px;
+        }
+
+.label-Strip-container {
+    color: var(--danger);
+}
+
+.moving-label {
+    color: var(--danger);
+    display: block;
+    font: bold large/1.2 calibri;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.divider-line {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.info-action {
+    padding: 10px 0;
+}
+
+    .info-action .info {
+        display: block;
+        text-align: center;
+        font: bold 14pt calibri;
+        padding: 0 0 10px;
+    }
+
+    .info-action .action {
+        text-align: right;
+        width: 100%;
+    }
+
+.page-grid {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+    .page-grid .table-header tr td {
+        font: bold 10pt Arial;
+        color: var(--bg);
+        height: 100%;
+        background: var(--primary);
+        border: none;
+        word-wrap: break-word;
+        text-align: left;
+    }
+
+.grid-wrapper {
+    width: 100%;
+    max-height: 600px;
+    overflow: auto;
+    margin: 0 0 20px;
+}
+
+    .grid-wrapper.topbotMar {
+        margin: 15px 0;
+    }
+
+    .grid-wrapper > div:first-of-type, .grid-wrapper > div:first-of-type > div {
+        width: 100%;
+    }
+
+    .grid-wrapper table tr td, .grid-wrapper table tr th {
+        padding: 5px;
+    }
+
+        .grid-wrapper table tr td.width-150 {
+            width: 150px;
+        }
+
+        .grid-wrapper table tr td.width-100 {
+            width: 100px;
+        }
+
+.sticky-header {
+    background: var(--primary);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.approvalAction {
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}
+
+    .approvalAction input {
+        margin: 0 5px;
+        min-width: 35px;
+    }
