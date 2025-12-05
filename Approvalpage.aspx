@@ -29,7 +29,7 @@
                 <hr class="header-line bottom" />
             </div>
             <div id="labelStripContainer">
-                <asp:Label ID="Label3" CssClass="moving-label" Text="Last date of submission: 28th November 2025 till 5.00 PM" runat="server"></asp:Label>
+                <asp:Label ID="Label3" CssClass="moving-label" Text="Last date of submission: 28th November 2025 till 5.00 PM & if invoice channel type is medvol ZSM can place order" runat="server"></asp:Label>
             </div>
         </div>
         <div>
@@ -84,7 +84,6 @@
                 </tr>
             </table>
             <div>
-
                 <hr class="divider-line" />
                 <center>
                     <asp:Label ID="Lblwh" Font-Size="Large" Font-Bold="true" Font-Names="calibri" runat="server"></asp:Label>

@@ -526,13 +526,22 @@ div.accountInfo {
     color: white !important;
     font-weight: bold;
 }
-
+.login-wrapper {
+    min-width: 100vh;
+    max-width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../images/login-bg.png");
+    background-size: cover;
+    background-position: top left;
+    background-repeat: no-repeat;
+}
 .user_card {
+    background: var(--bg);
     height: 400px;
     width: 350px;
-    margin-top: 70px;
-    margin-bottom: auto;
-    background: white;
     position: relative;
     display: flex;
     justify-content: center;
