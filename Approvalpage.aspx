@@ -113,8 +113,8 @@
                                 <itemtemplate>
                                     <div class="approvalAction">                                    
                                     <asp:CheckBox ID="Checkedbox" Enabled="false" Checked="true" runat="server" />
-                                    <asp:Button ID="btnApproved" Enabled="true" CssClass="addbtn" CommandArgument='<%#Eval("ZSM CODE") + ";" +Eval("ZSM_Name")+ ";" +Eval("Unblocked Percentage") + ";" +Eval("Approved")%>' CommandName="btncApproved" runat="server" Text="Approved" />
-                                    <asp:Button ID="btnNotApproved" Enabled="true" CssClass="addbtn" CommandArgument='<%#Eval("ZSM CODE") + ";" +Eval("ZSM_Name")+ ";" +Eval("Unblocked Percentage") + ";" +Eval("Approved")%>' CommandName="btncNotApproved" runat="server" Text="Not Approved" />
+                                    <asp:Button ID="btnApproved" Enabled="true" CssClass="addbtn green" CommandArgument='<%#Eval("ZSM CODE") + ";" +Eval("ZSM_Name")+ ";" +Eval("Unblocked Percentage") + ";" +Eval("Approved")%>' CommandName="btncApproved" runat="server" Text="Approved" />
+                                    <asp:Button ID="btnNotApproved" Enabled="true" CssClass="addbtn danger" CommandArgument='<%#Eval("ZSM CODE") + ";" +Eval("ZSM_Name")+ ";" +Eval("Unblocked Percentage") + ";" +Eval("Approved")%>' CommandName="btncNotApproved" runat="server" Text="Not Approved" />
                                     <asp:ImageButton ID="btnview" Enabled="true" Width="20px" CommandName="btncview" CommandArgument='<%#Eval("ZSM CODE") + ";" +Eval("ZSM_Name")+ ";" +Eval("Unblocked Percentage") + ";" +Eval("Approved")%>' runat="server"
                                         ImageUrl="~/images/search.png" ToolTip="view" />
                                     </div>

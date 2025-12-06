@@ -7,6 +7,8 @@
     --muted: #9ca3af;
     --primary: #0d9dbc;
     --danger: #ff0000;
+    --green: #50C878;
+    --gray: #696969;
     --radius: 12px;
     --space: 16px;
 }
@@ -260,6 +262,15 @@ div.accountInfo {
 .submitButton {
     text-align: right;
     padding-right: 10px;
+}
+.addbtn.gray {
+    background: var(--gray);
+}
+.addbtn.green {
+    background: var(--green);
+}
+.addbtn.danger {
+    background: var(--danger);
 }
 /**/
 

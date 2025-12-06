@@ -96,6 +96,8 @@
             <div class="info-action">
                 <asp:Label ID="Lblwh" runat="server" class="info"></asp:Label>
                 <div class="action">
+                    <asp:Button ID="btnreview" CssClass="addbtn" runat="server" Text="Review" ToolTip="This action will keep your Selected SKU in save mode"
+    onclick="btnreview_Click" />
                     <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Font-Bold="true" CssClass="addbtn" Text="Download Submitted List" />
                     <asp:Button ID="Button2" runat="server" OnClick="Blocking_Click" Font-Bold="true" ToolTip="Download Overall Blocking List" CssClass="addbtn" Text="Blocking List to Excel" />
                 </div>
@@ -177,8 +179,7 @@
                 </asp:UpdatePanel>
             </div>
         </div>
-        <asp:Button ID="btnreview" CssClass="addbtn" runat="server" Text="Review" ToolTip="This action will keep your Selected SKU in save mode"
-            onclick="btnreview_Click" />
+        
         <center>
             <asp:Label ID="Lblnote" Font-Size="Large" Font-Bold="true" ForeColor="Maroon" Font-Names="calibri" runat="server">Your Unblocking list sent for further Approval</asp:Label>
         </center>
@@ -318,13 +319,13 @@
                 </columns>
             </asp:GridView>
         </div>
-        <asp:Button ID="btnadd" CssClass="addbtn" ToolTip="Add more SKU's" runat="server" Text="Add"
+        <asp:Button ID="btnadd" CssClass="addbtn gray" ToolTip="Add more SKU's" runat="server" Text="Add"
             onclick="btnadd_Click" />
-        <asp:Button ID="btnccancel" CssClass="addbtn" ToolTip="This action will delete all the selected SKU's" runat="server" Text="Cancel"
+        <asp:Button ID="btnccancel" CssClass="addbtn danger" ToolTip="This action will delete all the selected SKU's" runat="server" Text="Cancel"
             onclick="btncancel_Click" />
-        <asp:Button ID="btnsubmit" CssClass="addbtn" runat="server" Text="Submit" ToolTip="This action will Submit all the Selected SKU's as your Unblocking list"
+        <asp:Button ID="btnsubmit" CssClass="addbtn green" runat="server" Text="Submit" ToolTip="This action will Submit all the Selected SKU's as your Unblocking list"
             onclick="btnsubmit_Click" />
-        <asp:Button ID="Btnsubmore" ToolTip="This action will Submit all the Selected SKU's as your Unblocking list" CssClass="addbtn" runat="server" Text="Submit"
+        <asp:Button ID="Btnsubmore" ToolTip="This action will Submit all the Selected SKU's as your Unblocking list" CssClass="addbtn green" runat="server" Text="Submit"
             onclick="btnsubmore_Click" />
         <ajaxtoolkit:modalpopupextender id="ModalPopupExtender1" runat="server" cancelcontrolid="btntcancel"
             popupcontrolid="Popup" targetcontrolid="Btnnav6" backgroundcssclass="modalBackground">
