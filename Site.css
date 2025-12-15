@@ -264,13 +264,13 @@ div.accountInfo {
     padding-right: 10px;
 }
 .addbtn.gray {
-    background: var(--gray);
+    background: var(--gray) !important;
 }
 .addbtn.green {
-    background: var(--green);
+    background: var(--green) !important;
 }
 .addbtn.danger {
-    background: var(--danger);
+    background: var(--danger) !important;
 }
 /**/
 
@@ -544,10 +544,7 @@ div.accountInfo {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("../images/login-bg.png");
-    background-size: cover;
-    background-position: top left;
-    background-repeat: no-repeat;
+    background: var(--primary);
 }
 .user_card {
     background: var(--bg);
@@ -754,3 +751,48 @@ div.accountInfo {
         margin: 0 5px;
         min-width: 35px;
     }
+    
+    .status-pending {
+    display: inline-block;
+    background-color: yellow;
+    color: black;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+    vertical-align: middle;
+     text-align: center;
+}
+
+.status-rejected {
+    display: inline-block;
+    background-color: red;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+    vertical-align: middle;
+     text-align: center;
+}
+
+.status-approved {
+    display: inline-block;
+    background-color: lightgreen;
+    color: black;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+    vertical-align: middle;
+     text-align: center;
+}
+.exportBtn {
+    background-image: url('~/images/Download.png'); /* your icon path */
+    background-repeat: no-repeat;
+    background-position: left center;  /* icon on left */
+    padding-left: 28px;  /* space so text doesn't overlap icon */
+    background-size: 18px 18px; /* icon size */
+}
+.header-sort {
+    text-decoration: none !important; /* remove underline */
+    color: white !important;          /* make text white */
+    cursor: pointer;
+}
