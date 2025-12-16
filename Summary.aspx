@@ -477,34 +477,45 @@
               
 </div>     <hr style="width: 1506px; box-shadow:0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); margin-top: 8px; margin-left: 0px;" />
    <center>  <asp:Label ID="Lblwh" Font-Size="Large" Font-Bold="true" Font-Names="calibri" runat="server"></asp:Label></center>
-   <div style=" text-align:right"><asp:Button ID="btndisapp" CssClass="addbtn" runat="server" Text="Submit" onclick="btndisapp_Click"   BackColor="#50C878"/> </div>
+   <div style=" text-align:right"> </div>
    <br /><asp:ScriptManager ID="ScriptManger1" runat="Server" EnablePartialRendering="true">
 </asp:ScriptManager>
 
     <asp:GridView ID="Grdemp" HeaderStyle-BackColor="#0d9dbc" AllowSorting="true" OnSorting="Grdemp_Sorting"
             HeaderStyle-BorderColor="#f2f2f2" HeaderStyle-BorderWidth="5px" HeaderStyle-CssClass="frozen-header"
         HeaderStyle-Font-Names="calibri" HeaderStyle-Font-Bold="false"
-            RowStyle-BorderWidth="5px" AlternatingRowStyle-BorderWidth="5px" 
+            RowStyle-BorderWidth="5px" AlternatingRowStyle-BorderWidth="5px" HeaderStyle-Font-Size="13 px" 
         RowStyle-Font-Names="calibri" RowStyle-HorizontalAlign="Center" 
             HeaderStyle-Height="3px" AlternatingRowStyle-Height="1px" RowStyle-Height="1px" 
             HeaderStyle-ForeColor="White" AlternatingRowStyle-BackColor="#f2f2f2"  
         ShowHeader="true" ShowHeaderWhenEmpty="true"
             AlternatingRowStyle-ForeColor="Black"    AutoGenerateColumns="false"  OnRowDataBound="Grdemp_RowDataBound"
             AlternatingRowStyle-BorderColor="#f2f2f2"  RowStyle-BackColor="white"  DataKeyNames="ZSM_NAME"
-            RowStyle-BorderColor="#f2f2f2" runat="server"  onrowcommand="Grdemp_rowcommand"
+            RowStyle-BorderColor="#f2f2f2" runat="server"  onrowcommand="Grdemp_rowcommand"  RowStyle-Font-Size="11 px"
             Height="50px" Width="1506px"  >
             <Columns>
-             <asp:BoundField DataField="Division" SortExpression="Division" ItemStyle-Font-Size="Small" ItemStyle-HorizontalAlign="left" HeaderStyle-HorizontalAlign="center" HeaderText="Division" ItemStyle-Width="200px"  HeaderStyle-Width="200px" />
-               <asp:BoundField DataField="ZSM CODE" SortExpression="ZSM CODE" ItemStyle-Font-Size="Small" ItemStyle-HorizontalAlign="left" HeaderStyle-HorizontalAlign="center" HeaderText="ZSM Code" ItemStyle-Width="200px"   HeaderStyle-Width="200px" />
-                 <asp:BoundField DataField="ZSM_Name" SortExpression="ZSM_Name" ItemStyle-Font-Size="Small" ItemStyle-HorizontalAlign="left" HeaderStyle-HorizontalAlign="center" HeaderText="ZSM Name" ItemStyle-Width="250px"   HeaderStyle-Width="250px" />
-                   <asp:BoundField DataField="Unblocked" SortExpression="Unblocked" ItemStyle-Font-Size="Small" ItemStyle-HorizontalAlign="center" HeaderText="Unblocked"  ItemStyle-Width="100px"  HeaderStyle-Width="100px" /> 
-                     <asp:BoundField DataField="Blocked" SortExpression="Blocked" ItemStyle-Font-Size="Small" ItemStyle-HorizontalAlign="center" HeaderText="Blocked"  ItemStyle-Width="100px"  HeaderStyle-Width="100px" /> 
-  <asp:BoundField DataField="Total" SortExpression="Total" ItemStyle-Font-Size="Small" ItemStyle-HorizontalAlign="center" HeaderText="Total"  ItemStyle-Width="100px"  HeaderStyle-Width="100px" /> 
-  <asp:BoundField DataField="Unblocked Percentage" SortExpression="Unblocked Percentage" ItemStyle-Font-Size="Small" ItemStyle-HorizontalAlign="center" HeaderText="Unblocked Percentage"  ItemStyle-Width="100px"  HeaderStyle-Width="100px" /> 
-                    <asp:BoundField DataField="Approved" SortExpression="Approved" ItemStyle-Font-Size="Small" ItemStyle-HorizontalAlign="center" HeaderText="Status"  ItemStyle-Width="100px"  HeaderStyle-Width="100px" /> 
+            <asp:TemplateField HeaderText="Click To Expand" ItemStyle-HorizontalAlign="center">
+                                <itemtemplate>
+                                    <div class="approvalAction">                                    
+                                   <asp:ImageButton ID="btnview" Enabled="true" Width="20px" CommandName="btncview" CommandArgument='<%#Eval("ZSM CODE") + ";" +Eval("ZSM_Name")+ ";" +Eval("Unblocked Percentage") + ";" +Eval("Approved")%>' runat="server"
+                                        ImageUrl="~/images/View.png" ToolTip="view" />
+                                    </div>
+                                </itemtemplate>
+                            </asp:TemplateField>
+             <asp:BoundField DataField="Division" SortExpression="Division" ItemStyle-HorizontalAlign="left" HeaderStyle-HorizontalAlign="center" HeaderText="Division" ItemStyle-Width="200px"  HeaderStyle-Width="200px" />
+               <asp:BoundField DataField="ZSM CODE" SortExpression="ZSM CODE" ItemStyle-HorizontalAlign="left" HeaderStyle-HorizontalAlign="center" HeaderText="ZSM Code" ItemStyle-Width="200px"   HeaderStyle-Width="200px" />
+                 <asp:BoundField DataField="ZSM_Name" SortExpression="ZSM_Name" ItemStyle-HorizontalAlign="left" HeaderStyle-HorizontalAlign="center" HeaderText="ZSM Name" ItemStyle-Width="250px"   HeaderStyle-Width="250px" />
+                   <asp:BoundField DataField="Unblocked" SortExpression="Unblocked" ItemStyle-HorizontalAlign="center" HeaderText="Unblocked"  ItemStyle-Width="100px"  HeaderStyle-Width="100px" /> 
+                     <asp:BoundField DataField="NO_Of_DOH" SortExpression="NO_Of_DOH"  ItemStyle-HorizontalAlign="center" HeaderText="Post-Unblock High Inv" ItemStyle-Width="100px" HeaderStyle-Width="100px" />
+                            <asp:BoundField DataField="NO_Of_Newadd" SortExpression="NO_Of_Newadd"  ItemStyle-HorizontalAlign="center" HeaderText="New Entry" ItemStyle-Width="100px" HeaderStyle-Width="100px" />
+                            
+                     <asp:BoundField DataField="Blocked" SortExpression="Blocked" ItemStyle-HorizontalAlign="center" HeaderText="Blocked"  ItemStyle-Width="100px"  HeaderStyle-Width="100px" /> 
+  <asp:BoundField DataField="Total" SortExpression="Total" ItemStyle-HorizontalAlign="center" HeaderText="Total"  ItemStyle-Width="100px"  HeaderStyle-Width="100px" /> 
+  <asp:BoundField DataField="Unblocked Percentage" SortExpression="Unblocked Percentage" ItemStyle-HorizontalAlign="center" HeaderText="Unblocked Percentage"  ItemStyle-Width="100px"  HeaderStyle-Width="100px" DataFormatString="{0}%" /> 
+                    <asp:BoundField DataField="Approved" SortExpression="Approved" ItemStyle-HorizontalAlign="center" HeaderText="Status"  ItemStyle-Width="100px"  HeaderStyle-Width="100px" /> 
                     
-                    <asp:BoundField DataField="Submit_Time" SortExpression="Submit_Time" ItemStyle-Font-Size="Small" DataFormatString="{0:dd-MMM-yyyy hh:mm tt}" HtmlEncode="false" ItemStyle-HorizontalAlign="left" HeaderStyle-HorizontalAlign="center"  HeaderText="Submit Time" ItemStyle-Width="150px"  HeaderStyle-Width="150px" />
-               <asp:BoundField DataField="Approved_Time" SortExpression="Approved_Time" ItemStyle-Font-Size="Small" DataFormatString="{0:dd-MMM-yyyy hh:mm tt}" HtmlEncode="false" ItemStyle-HorizontalAlign="left" HeaderStyle-HorizontalAlign="center"  HeaderText="Approval Time" ItemStyle-Width="150px"  HeaderStyle-Width="150px" />
+                    <asp:BoundField DataField="Submit_Time" SortExpression="Submit_Time" DataFormatString="{0:dd-MMM-yyyy hh:mm tt}" HtmlEncode="false" ItemStyle-HorizontalAlign="left" HeaderStyle-HorizontalAlign="center"  HeaderText="Submit Time" ItemStyle-Width="150px"  HeaderStyle-Width="150px" />
+               <asp:BoundField DataField="Approved_Time" SortExpression="Approved_Time" DataFormatString="{0:dd-MMM-yyyy hh:mm tt}" HtmlEncode="false" ItemStyle-HorizontalAlign="left" HeaderStyle-HorizontalAlign="center"  HeaderText="Approval Time" ItemStyle-Width="150px"  HeaderStyle-Width="150px" />
 
                     <asp:TemplateField HeaderText="Approval List" ItemStyle-HorizontalAlign="center">  <ItemTemplate>
                     <div class="approvalAction"> 
@@ -535,11 +546,11 @@
                 (Eval("Unblocked Percentage") == null ? "" : Eval("Unblocked Percentage").ToString()) + ";" +
                 (Eval("Approved") == null ? "" : Eval("Approved").ToString()) %>' />
 
-                      <asp:ImageButton ID="btnview" Enabled="true" Width="20px"  CommandName="btncview" CommandArgument='<%# (Eval("ZSM CODE") ?? "") + ";" + 
+                      <%--<asp:ImageButton ID="btnview" Enabled="true" Width="20px"  CommandName="btncview" CommandArgument='<%# (Eval("ZSM CODE") ?? "") + ";" + 
                  (Eval("ZSM_Name") ?? "") + ";" + 
                  (Eval("Unblocked Percentage") ?? "") + ";" + 
                  (Eval("Approved") ?? "") %>' runat="server"
-                       ImageUrl="~/images/search.png" class="ttip_t" ToolTip="view" /> 
+                       ImageUrl="~/images/search.png" class="ttip_t" ToolTip="view" /> --%>
                        </div>                 
                      </ItemTemplate></asp:TemplateField> 
                           </Columns>           
@@ -549,6 +560,8 @@
       <hr style="width: 1506px; box-shadow:0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); margin-top: 8px; margin-left: 0px;" />
         <br />
            <center>  <asp:Label ID="lblnow" Font-Size="Large" Font-Bold="true" Font-Names="calibri" runat="server"></asp:Label></center>
+          <div style=" text-align:right"><asp:Button ID="btndisapp" CssClass="addbtn" runat="server" Text="Submit" onclick="btndisapp_Click"   BackColor="#50C878"/> </div>
+       
            <div  style=" left:0px; text-align:left;">  <asp:UpdatePanel ID="updatePanel1" runat="server">
                          <ContentTemplate>
         <asp:GridView ID="Grdrprt" HeaderStyle-BackColor="#0d9dbc" AllowSorting="true" OnSorting="Grdrprt_Sorting"
@@ -557,26 +570,25 @@
             RowStyle-BorderWidth="5px" AlternatingRowStyle-BorderWidth="5px" 
         RowStyle-Font-Names="calibri" RowStyle-HorizontalAlign="Center" ShowHeaderWhenEmpty="true"
             HeaderStyle-Height="3px" AlternatingRowStyle-Height="1px" RowStyle-Height="1px" 
-            HeaderStyle-ForeColor="White" AlternatingRowStyle-BackColor="#f2f2f2"  
-            AlternatingRowStyle-ForeColor="Black" RowStyle-Font-Size="Small"  AutoGenerateColumns="false"   
+            HeaderStyle-ForeColor="White" AlternatingRowStyle-BackColor="#f2f2f2" HeaderStyle-Font-Size="13 px" 
+            AlternatingRowStyle-ForeColor="Black" RowStyle-Font-Size="11 px"  AutoGenerateColumns="false"   
             AlternatingRowStyle-BorderColor="#f2f2f2"  RowStyle-BackColor="white" 
             RowStyle-BorderColor="#f2f2f2" runat="server" OnRowDataBound="Grdemp_NEERowdatabound"
             Height="50px" Width="1506px" >
             <Columns>       
-               <asp:BoundField DataField="Territory Name" SortExpression="Territory Name" ItemStyle-Font-Size="Small" ItemStyle-HorizontalAlign="left"  HeaderStyle-HorizontalAlign="Left" HeaderText="Territory Name"  HeaderStyle-Width="120px" />       
-               <asp:BoundField DataField="SALES_ACC_NAME" SortExpression="SALES_ACC_NAME" ItemStyle-Font-Size="Small" ItemStyle-HorizontalAlign="left"  HeaderStyle-HorizontalAlign="Left" HeaderText="Stockist Name"  HeaderStyle-Width="120px" />
-                <asp:BoundField DataField="SALES_PROD_NAME" SortExpression="SALES_PROD_NAME" ItemStyle-Font-Size="Small" ItemStyle-HorizontalAlign="left"  HeaderStyle-HorizontalAlign="Left" HeaderText="Product Name"  HeaderStyle-Width="120px" />
-               <asp:BoundField DataField="SALES_2023-05" SortExpression="SALES_2023-05" ItemStyle-Font-Size="Small" ItemStyle-HorizontalAlign="Right"  HeaderStyle-HorizontalAlign="Right" HeaderText="Pri Sales SEP-25(V)"  HeaderStyle-Width="180px" />
-                <asp:BoundField DataField="SALES_2023-06" SortExpression="SALES_2023-06" ItemStyle-Font-Size="Small" ItemStyle-HorizontalAlign="Right" HeaderStyle-HorizontalAlign="Right" HeaderText="Pri Sales OCT-25(V)"  HeaderStyle-Width="180px" />
-              <asp:BoundField DataField="SALES_2023-07" SortExpression="SALES_2023-07" ItemStyle-Font-Size="Small" ItemStyle-HorizontalAlign="Right" HeaderStyle-HorizontalAlign="Right" HeaderText="Pri Sales NOV-25(V)"  HeaderStyle-Width="180px" />
-               <asp:BoundField DataField="AVG_SEC_JUL23" SortExpression="AVG_SEC_JUL23" ItemStyle-Font-Size="Small" ItemStyle-HorizontalAlign="Right" HeaderStyle-HorizontalAlign="Right" HeaderText="Avg.Secondary 3 months(V)"  HeaderStyle-Width="210px" />
-               <asp:BoundField DataField="CLO_2023_07" SortExpression="CLO_2023_07" ItemStyle-Font-Size="Small" ItemStyle-HorizontalAlign="Right" HeaderStyle-HorizontalAlign="Right" HeaderText="Closing NOV-25 (V)"  HeaderStyle-Width="180px" />
-                <asp:BoundField DataField="CLO_Unit_07" SortExpression="CLO_Unit_07" ItemStyle-Font-Size="Small" ItemStyle-HorizontalAlign="Right" HeaderStyle-HorizontalAlign="Right" HeaderText="Closing NOV-25 (U)"  HeaderStyle-Width="180px" />
-                <asp:BoundField DataField="Brands" SortExpression="Brands" ItemStyle-Font-Size="Small" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderText="Brands"  HeaderStyle-Width="180px" />
-       <asp:BoundField DataField="Tag" SortExpression="Tag"  ItemStyle-Font-Size="Small" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderText="Tag"  HeaderStyle-Width="180px" />
-               <asp:BoundField DataField="Liquidation" ItemStyle-Font-Size="Small" ItemStyle-HorizontalAlign="Center"  HeaderStyle-HorizontalAlign="Center" HeaderText="Liquidation Plan(Month)"  HeaderStyle-Width="70px" />
-               <asp:BoundField DataField="ReasonUnblock" ItemStyle-Font-Size="Small" ItemStyle-HorizontalAlign="Center"  HeaderStyle-HorizontalAlign="Center" HeaderText="Reason For Unblock"  HeaderStyle-Width="100px" />
-                 <asp:BoundField DataField="Remark" SortExpression="Remark" ItemStyle-Font-Size="Small" ItemStyle-HorizontalAlign="Center"  HeaderStyle-HorizontalAlign="Center" HeaderText="Remark"  ItemStyle-Width="200px"  HeaderStyle-Width="200px" /> 
+               <asp:BoundField DataField="Territory Name" SortExpression="Territory Name" ItemStyle-HorizontalAlign="left"  HeaderStyle-HorizontalAlign="Left" HeaderText="Territory Name"  HeaderStyle-Width="120px" />       
+               <asp:BoundField DataField="SALES_ACC_NAME" SortExpression="SALES_ACC_NAME" ItemStyle-HorizontalAlign="left"  HeaderStyle-HorizontalAlign="Left" HeaderText="Stockist Name"  HeaderStyle-Width="120px" />
+                <asp:BoundField DataField="SALES_PROD_NAME" SortExpression="SALES_PROD_NAME" ItemStyle-HorizontalAlign="left"  HeaderStyle-HorizontalAlign="Left" HeaderText="Product Name"  HeaderStyle-Width="120px" />
+               <asp:BoundField DataField="SALES_2023-05" SortExpression="SALES_2023-05" ItemStyle-HorizontalAlign="Right"  HeaderStyle-HorizontalAlign="Right" HeaderText="Pri Sales SEP-25(V)"  HeaderStyle-Width="180px" />
+                <asp:BoundField DataField="SALES_2023-06" SortExpression="SALES_2023-06" ItemStyle-HorizontalAlign="Right" HeaderStyle-HorizontalAlign="Right" HeaderText="Pri Sales OCT-25(V)"  HeaderStyle-Width="180px" />
+              <asp:BoundField DataField="SALES_2023-07" SortExpression="SALES_2023-07" ItemStyle-HorizontalAlign="Right" HeaderStyle-HorizontalAlign="Right" HeaderText="Pri Sales NOV-25(V)"  HeaderStyle-Width="180px" />
+               <asp:BoundField DataField="AVG_SEC_JUL23" SortExpression="AVG_SEC_JUL23" ItemStyle-HorizontalAlign="Right" HeaderStyle-HorizontalAlign="Right" HeaderText="Avg.Secondary 3 months(V)"  HeaderStyle-Width="210px" />
+               <asp:BoundField DataField="CLO_2023_07" SortExpression="CLO_2023_07" ItemStyle-HorizontalAlign="Right" HeaderStyle-HorizontalAlign="Right" HeaderText="Closing NOV-25 (V)"  HeaderStyle-Width="180px" />
+                <asp:BoundField DataField="CLO_Unit_07" SortExpression="CLO_Unit_07" ItemStyle-HorizontalAlign="Right" HeaderStyle-HorizontalAlign="Right" HeaderText="Closing NOV-25 (U)"  HeaderStyle-Width="180px" />
+               <asp:BoundField DataField="INVENTORY_DAYS" SortExpression="INVENTORY_DAYS"  ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderText="Inventory Days" HeaderStyle-Width="180px"  HtmlEncode="False" />
+                            <asp:BoundField DataField="Tag" SortExpression="Tag"  ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderText="Additional Info" HeaderStyle-Width="180px" />
+                             <asp:BoundField DataField="ReasonUnblock" ItemStyle-HorizontalAlign="Center"  HeaderStyle-HorizontalAlign="Center" HeaderText="Reason For Unblock"  HeaderStyle-Width="100px" />
+                 <asp:BoundField DataField="Remark" SortExpression="Remark" ItemStyle-HorizontalAlign="Center"  HeaderStyle-HorizontalAlign="Center" HeaderText="Remark"  ItemStyle-Width="200px"  HeaderStyle-Width="200px" /> 
                                 
                              <asp:TemplateField HeaderStyle-Width="200px" HeaderStyle-HorizontalAlign="Center" ItemStyle-Width="200px" HeaderText="Unblock">
                                        <ItemTemplate>  

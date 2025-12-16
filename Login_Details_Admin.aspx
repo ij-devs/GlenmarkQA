@@ -437,7 +437,7 @@
                  <script type="text/javascript">
                      $('#<%=ddlempname.ClientID %>').chosen();
                 </script> 
-                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Font-Bold="true" ToolTip="Export all Overall Blocking List of your DIVISION" CssClass="addbtn" Text="Overall Export to Excel" />
+                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Font-Bold="true" ToolTip="Export all Overall Blocking List of your DIVISION" CssClass="addbtn" Text="Export to Excel" />
     <hr style="width: 1499px; box-shadow:0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); margin-top: 8px; margin-left: 0px; height: -16px;" />
 
   <asp:Label ID="Lblrows"  Font-Size="Medium" Font-Bold="true" CssClass="rigg" Font-Names="calibri" runat="server"></asp:Label>
@@ -446,8 +446,7 @@
  <div style=" text-align:right; height: 15px;">
  <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Font-Bold="true" ToolTip="Export Blocking List of this ZSM" CssClass="addbtn" Text="Export to Excel" />
  <br /></div>
-   <br />
-      <br />
+  
     <asp:GridView ID="Grdemp" HeaderStyle-BackColor="#0d9dbc" AllowSorting="true" OnSorting="Grdemp_Sorting" HeaderStyle-CssClass="frozen-header"
             HeaderStyle-BorderColor="#f2f2f2" HeaderStyle-BorderWidth="5px" 
         HeaderStyle-Font-Names="calibri" HeaderStyle-Font-Bold="false"
@@ -457,7 +456,7 @@
             HeaderStyle-ForeColor="White" AlternatingRowStyle-BackColor="#f2f2f2" 
             AlternatingRowStyle-ForeColor="Black" AutoGenerateColumns="false"   
             AlternatingRowStyle-BorderColor="#f2f2f2"  RowStyle-BackColor="white" 
-            RowStyle-BorderColor="#f2f2f2" runat="server"
+            RowStyle-BorderColor="#f2f2f2" runat="server"   RowStyle-Font-Size="11 px" HeaderStyle-Font-Size="13 px"
             Height="50px" Width="1506px" >
             <Columns>
         
