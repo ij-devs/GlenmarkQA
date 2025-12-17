@@ -1471,7 +1471,7 @@ SELECT
     ROUND(A.[AVG_SEC_AUG23], 0) AS [AVG_SEC_NOV23],
     ROUND(A.[CLO_2023_08], 0) AS [CLO_2023_11],
     ROUND(A.[CLO_Unit_08], 0) AS [CLO_Unit_11],
-    A.[Brands], A.[Tag],
+     A.[INVENTORY_DAYS] AS [Inventory Days], A.[Tag] AS [Additional Info],
     COALESCE(b.Unblock, 'Blocked') AS [Unblock],
     COALESCE(b.Liquidation, '-') AS [Liquidation],
     COALESCE(b.ReasonUnblock, '-') AS [ReasonUnblock],
